@@ -1,6 +1,11 @@
-# Comprimir y descomprimir un archivo
-
 import lz4.frame
 
-def comprimir (archOriginal, archComprimido):
-  with 
+def comprimir (pArchOriginal, pArchComprimido):
+    with open(pArchOriginal, 'rb') as archInicial:
+        with lz4.frame.open(pArchComprimido, 'wb') as archFinal:
+            archFinal.write(archInicial.read())
+
+def descomprimir(pArchComprimidoIn, pArchDescomprimido):
+    with lz4.frame.open(pArchComprimidoIn, 'rb') as archInicial:
+        with open(pArchDescomprimido, 'wb') as archFinal:
+            archFinal.write(archInicial.read())
