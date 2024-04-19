@@ -1,0 +1,6 @@
+# Comprimir y descomprimir un archivo
+
+import lz4.frame
+
+def comprimir (archOriginal, archComprimido):
+  with 
